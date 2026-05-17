@@ -9,14 +9,14 @@ Download or clone this project, then use the file for your OS.
 macOS:
 
 ```bash
-chmod +x start-mac.command setup-mac-linux.sh run-mac-linux.sh
-./start-mac.command
+chmod +x RUN-MAC.command start-mac.command setup-mac-linux.sh run-mac-linux.sh
+./RUN-MAC.command
 ```
 
 Windows:
 
 ```text
-Double-click start-windows.bat
+Double-click RUN-WINDOWS.bat
 ```
 
 Then open:

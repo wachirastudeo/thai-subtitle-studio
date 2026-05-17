@@ -2,7 +2,7 @@
 
 Local speech-to-text subtitle maker for Thai and English. It runs Whisper locally and exports SRT/VTT.
 
-## Easiest Run
+## Run
 
 Download or clone this project, then use the file for your OS.
 
@@ -43,38 +43,6 @@ Windows:
 
 ```powershell
 winget install OpenJS.NodeJS Python.Python.3.12 Gyan.FFmpeg
-```
-
-## macOS / Linux
-
-Manual run:
-
-```bash
-chmod +x setup-mac-linux.sh run-mac-linux.sh
-./setup-mac-linux.sh
-./run-mac-linux.sh
-```
-
-Open:
-
-```text
-http://127.0.0.1:5173
-```
-
-## Windows PowerShell
-
-Manual run:
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\setup-windows.ps1
-.\run-windows.ps1
-```
-
-Open:
-
-```text
-http://127.0.0.1:5173
 ```
 
 ## ffmpeg install

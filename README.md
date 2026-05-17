@@ -2,6 +2,8 @@
 
 Local speech-to-text subtitle maker for Thai and English. It runs Whisper locally and exports SRT/VTT.
 
+![Thai Subtitle Studio preview](assets/preview.png)
+
 ## Run
 
 Download or clone this project, then use the file for your OS.

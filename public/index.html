@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thai Subtitle Studio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel hero">
+        <div>
+          <p class="eyebrow">Local Whisper Subtitle Maker</p>
+          <h1>Thai Subtitle Studio</h1>
+          <p class="lead">ถอดเสียงไทย/อังกฤษเป็นไฟล์ซับ พร้อม timestamp และตัดบรรทัดให้อ่านง่าย</p>
+        </div>
+        <div class="status" id="status">พร้อมใช้งาน</div>
+      </section>
+
+      <section class="workspace">
+        <form id="form" class="panel controls">
+          <label class="drop" id="drop">
+            <input id="media" name="media" type="file" accept="audio/*,video/*" required />
+            <span class="dropIcon">↥</span>
+            <strong id="fileName">เลือกหรือลากไฟล์เสียง/วิดีโอ</strong>
+            <small>รองรับ mp3, wav, m4a, mp4, mov และไฟล์ที่ ffmpeg อ่านได้</small>
+          </label>
+
+          <div class="grid">
+            <label>
+              ภาษา
+              <select name="language">
+                <option value="auto">Auto detect</option>
+                <option value="th">ไทย</option>
+                <option value="en">English</option>
+              </select>
+            </label>
+            <label>
+              Whisper model
+              <select name="model">
+                <option value="small" selected>small สมดุล</option>
+                <option value="medium">medium แม่นขึ้น</option>
+                <option value="turbo">turbo เร็วและแม่น</option>
+                <option value="large-v3">large-v3 แม่นสุด</option>
+              </select>
+            </label>
+            <label>
+              Format
+              <select name="format">
+                <option value="srt" selected>SRT</option>
+                <option value="vtt">VTT</option>
+              </select>
+            </label>
+            <label>
+              ตัวอักษรต่อ cue
+              <input name="maxChars" type="number" min="20" max="70" value="38" />
+            </label>
+          </div>
+
+          <button id="submit" type="submit">เริ่มถอดเสียง</button>
+
+          <div class="progressCard" id="progressCard" hidden>
+            <div class="progressMeta">
+              <span id="progressLabel">เตรียมไฟล์</span>
+              <strong id="progressValue">0%</strong>
+            </div>
+            <div class="progressTrack" aria-label="transcription progress">
+              <div class="progressBar" id="progressBar"></div>
+            </div>
+            <p class="progressDetail" id="progressDetail">รอเริ่มงาน</p>
+          </div>
+        </form>
+
+        <section class="panel output">
+          <div class="toolbar">
+            <h2>Subtitle</h2>
+            <div>
+              <button id="copy" type="button" disabled>Copy</button>
+              <button id="download" type="button" disabled>Download</button>
+            </div>
+          </div>
+          <textarea id="subtitle" spellcheck="false" placeholder="ผลลัพธ์จะแสดงที่นี่"></textarea>
+        </section>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

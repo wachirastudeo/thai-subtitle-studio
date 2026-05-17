@@ -1,39 +1,49 @@
 # Thai Subtitle Studio
 
-Local speech-to-text subtitle maker for Thai and English. It runs Whisper locally and exports SRT/VTT.
+โปรแกรมถอดเสียงเป็นซับไตเติล รองรับภาษาไทยและอังกฤษ รันในเครื่องตัวเอง ใช้ Whisper ฟรี และ export เป็นไฟล์ `SRT` / `VTT`
 
 ![Thai Subtitle Studio preview](assets/preview.png)
 
-## Run
+## วิธีรัน
 
-Download or clone this project, then use the file for your OS.
+ดาวน์โหลดหรือ clone โปรเจกต์นี้ แล้วกดไฟล์ตามระบบที่ใช้
 
-macOS:
+### macOS
+
+เปิด Terminal ในโฟลเดอร์โปรเจกต์ แล้วรันครั้งแรก:
 
 ```bash
 chmod +x RUN-MAC.command start-mac.command setup-mac-linux.sh run-mac-linux.sh
 ./RUN-MAC.command
 ```
 
-Windows:
+ครั้งต่อไปกดไฟล์นี้ได้เลย:
 
 ```text
-Double-click RUN-WINDOWS.bat
+RUN-MAC.command
 ```
 
-Then open:
+### Windows
+
+ดับเบิลคลิกไฟล์นี้:
+
+```text
+RUN-WINDOWS.bat
+```
+
+จากนั้นเปิดเว็บ:
 
 ```text
 http://127.0.0.1:5173
 ```
 
-## Requirements
+## ต้องมีในเครื่อง
 
 - Node.js 20+
 - Python 3.10+
 - ffmpeg
 
-If one is missing, install it first:
+ถ้ายังไม่มี ให้ติดตั้งก่อน
 
 macOS:
 
@@ -47,31 +57,11 @@ Windows:
 winget install OpenJS.NodeJS Python.Python.3.12 Gyan.FFmpeg
 ```
 
-## ffmpeg install
+## เลือกโมเดลไหนดี
 
-macOS:
+- `small`: เบา ใช้งานทั่วไป
+- `medium`: แม่นขึ้น
+- `turbo`: เร็วและแม่น แนะนำให้ลองก่อน
+- `large-v3`: แม่นสุด แต่ช้าและกินเครื่องกว่า
 
-```bash
-brew install ffmpeg
-```
-
-Windows:
-
-```powershell
-winget install Gyan.FFmpeg
-```
-
-Ubuntu/Debian:
-
-```bash
-sudo apt install ffmpeg
-```
-
-## Model guide
-
-- `small`: balanced, lighter
-- `medium`: more accurate
-- `turbo`: fast and accurate
-- `large-v3`: most accurate, slower and heavier
-
-First run may take longer because Whisper downloads the selected model.
+ครั้งแรกที่เลือกโมเดล อาจรอนาน เพราะ Whisper ต้องดาวน์โหลดโมเดลก่อน
